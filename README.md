@@ -1,9 +1,6 @@
 # Scenario-Understanding-of-Traffic-Scenes-Through-Large-Visual-Language-Models
 
-Evaluation code for the corresponding paper 🔬 [arXiv Paper](https://arxiv.org/abs/2501.17131)
-
-This is the complete code, including evaluation and code for models not used in inference
-
+Evaluation code for the corresponding [paper](https://arxiv.org/abs/2501.17131) 🔬
 
 ## image_extract.py
 
