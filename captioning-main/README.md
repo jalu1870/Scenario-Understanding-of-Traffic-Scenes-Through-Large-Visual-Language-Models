@@ -1,6 +1,6 @@
-# captioning
+# Scenario-Understanding-of-Traffic-Scenes-Through-Large-Visual-Language-Models
 
-In this project different VLM are evaluated for their performance on VQA on a manually labeled autonomous driving dataset
+Evaluation code for the corresponding paper 🔬 [arXiv Paper](https://arxiv.org/abs/2501.17131)
 
 This is the complete code, including evaluation and code for models not used in inference
 
