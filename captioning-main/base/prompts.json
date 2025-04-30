@@ -1,0 +1,21 @@
+{
+    "best_prompts":{
+        "llava-1.5": [
+            "{  'prompt': 'land use in the image',  'classification only': {    'labels': ['urban area','rural area','suburban area','industrial area','nature'],    'output_format': 'label only'  }} ; land_use",
+            "are there normal lanemarks, crosswalk lanemarks, bus lane lanemarks or no lanemarks? return only most fitting tag. ; lanemarks",
+            "Question: how many driving lanes are in the scene? return only the text for the most fitting number, nothing else. Answer:  ; number_of_lanes",
+            "are there none, few, several or many persons or riders visible? return most fitting category only. ; number_of_vulnerable_road_users",
+            "{  'prompt': 'pedestrians or riders in the image',  'classification only': {    'labels': ['yes','no'],    'output_format': 'label only'  }} ; person",
+            "Question: is the road condition dry, wet, snowy, icy or muddy? return only the text for the most fitting tag, nothing else. Answer:  ; road_condition",
+            "Question: is a road instersection in the scene? return only yes or no, nothing else. Answer:  ; road_intersection",
+            "is there one-directional or bi-directional traffic? return only the text for the most fitting tag, nothing else. ; street_configuration",
+            "is the time of the day twilight, daytime, nighttime, undefined? return only the text for the most fitting tag, nothing else. ; time_of_day",
+            "Question: is a traffic light visible? return only yes or no, nothing else. Answer:  ; traffic_light_for_ego-vehicle",
+            "{  'prompt': 'traffic scenario in the image',  'classification only': {    'labels': ['free-flowing traffic','congested traffic','traffic accident','construction zone'],    'output_format': 'label only'  }} ; traffic_scene",
+            "Question: is a traffic sign visible in the scene? return only yes or no, nothing else. Answer:  ; traffic_sign_for_ego-vehicle",
+            "is the urban environment a tunnel, a residential area, a parking lot, a city street, a gas station, a highway or undefined? return only the text for the most fitting tag, nothing else. ; urban_environment",
+            "{  'prompt': 'ego vehicle maneuver in the image',  'classification only': {    'labels': ['moving forward','stopping','turning','lane changing','parking'],    'output_format': 'label only'  }} ; vehicle_maneuver",
+            "Question: is the scene too bright? return only yes or no, nothing else. Answer:  ; vision_impairing_brightness"
+        ]
+    }
+}

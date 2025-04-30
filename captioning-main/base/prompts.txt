@@ -1,0 +1,271 @@
+visibility
+prompt = "does the scene have a vision impairing glare or a natural glare? return only most fitting category"
+prompt = "is the sun blinding the photographer? return only yes or no"#94
+prompt = "is the sun blinding the camera? return only yes or no"#93
+prompt = "does the scene have a vision impairing glare? return only most fitting category"#90
+prompt = "is the sun strongly blinding the photographer? return only yes or no"#95 not that good
+prompt = "is the sun impacting the visibility? return only yes or no"#93
+prompt = "scene have a vision impairing glare? return only most fitting category"#87
+prompt = "is the sun impacting the road visibility? return only yes or no"#94
+prompt = "is the road visible? return only yes or no"#86
+prompt = "is the glaring in the scene impacting the vision? return only yes or no"#92
+prompt = "is the glaring in the scene impacting the road visibility? return only yes or no"#93
+
+prompt = "is the road clearly visible? return only yes or no"#86
+prompt = "is it based on the camera safe to drive? return only yes or no"#86
+
+
+prompt = "does the scene have a vision impairing glare and is the scene bright? return only most fitting category"#87
+prompt = "does the scene have a vision impairing glaring? return only most fitting category"#87
+
+
+prompt = "is the sun blinding the photographer making it difficult to see the road?"# return only yes or no"#94 not that good
+prompt = "is the sun blinding the camera making it difficult to see the road?"# return only yes or no"#94 not that good
+
+prompt = "does the sun make the image so  bright that it is difficult to see the road?"# return only yes or no"#94 not that good
+prompt = "is the image so bright that it is difficult to see the road?"# better
+
+prompt = "does the brightness of the scene overpower the roads visibility? return only yes or no"# best
+prompt = "does the brightness of the scene overpower the roads visibility and visibility in the distance? return only yes or no"# best
+
+prompts = [
+            #'["strong blinding brightness","normal brightness"] ; vision_impairing_brightness',
+            #'["rainy weather", "snowy weather", "clear weather", "overcast weather", "partly cloudy weather", "foggy weather", "other weather"] ; weather',
+            #'["twilight","daytime","nighttime","other"] ; time_of_day',\
+            #'["urban area", "rural area", "suburban area", "industrial area" ,"nature"] ; land_use',
+            #'["tunnel", "residential area", "parking lot", "city street", "gas station", "highway","other"] ; urban_environment',\
+            '["vulnerable road user","no vulnerable road user"] ; person',
+            '["traffic sign for ego vehicle","no traffic sign for ego vehicle"] ; traffic_sign_for_ego-vehicle',
+            '["traffic light for ego vehicle","other"] ; traffic_light_for_ego-vehicle',
+            # '["no person/rider","few person/rider","several person/rider","many person/rider"] ; number_of_vulnerable_road_users',\
+            # '["no vulnerable road user","few vulnerable road user","several vulnerable road user","many vulnerable road user"] ; number_of_vulnerable_road_users',\
+            #'["dry road","wet road","icy road","muddy road"] ; road_condition',
+            '["one-way traffic","bidirectional traffic"] ; street_configuration',
+            # '["normal lanemarks","crosswalk lanemarks","bus lane lanemarks","other lanemarks"] ; lanemarks',
+            # '["one driving lane","two driving lanes","three driving lanes","four driving lanes","five driving lanes","six driving lanes","more than six driving lanes"] ; number_of_lanes',\
+            # '["free-flowing traffic","congested traffic","traffic accident","construction zone"] ; traffic_scene',
+            # '["road intersection","other"] ; road_intersection',
+            # '["vehicle moving forward","vehicle stopping","vehicle turning","vehicle lane changing","vehicle parking"] ; vehicle_maneuver'
+            ]
+    #llavaa 1.6
+    prompts = ["is the scene too bright? return only yes or no, nothing else. ; vision_impairing_brightness",
+               "is the image too bright? return only yes or no, nothing else. ; vision_impairing_brightness",
+               "is the weather in the image rainy, snowy, clear, overcast, partly cloudy, foggy, undefined? return only the text for the most fitting tag, nothing else. ; weather",
+               "is the time of the day in the scene twilight, daytime, nighttime, undefined? return only the text for the most fitting tag, nothing else. ; time_of_day",
+               "is the surrounding in the image an urban area, a rural area, a suburban area, an industrial area or nature? return only the text for the most fitting tag, nothing else. ; land_use",
+            "is the urban environment in the scene a tunnel, a residential area, a parking lot, a city street, a gas station, a highway or undefined? return only the text for the most fitting tag, nothing else. ; urban_environment",
+            "are persons or riders in the image? return only yes or no, nothing else. ; person",
+            "is a traffic sign visible in the scene? return only yes or no, nothing else. ; traffic_sign_for_ego-vehicle",
+            "is a traffic light visible in the scene? return only yes or no, nothing else. ; traffic_light_for_ego-vehicle",
+            "are there none, few, several or many persons or riders visible in the scene? return only the text for the most fitting tag, nothing else. ; number_of_vulnerable_road_users",
+            "is the road condition in the scene dry, wet, snowy, icy or muddy? return only the text for the most fitting tag, nothing else. ; road_condition", 
+               "is there one-directional or bi-directional traffic in the scene? return only the text for the most fitting tag, nothing else. ; street_configuration",
+               "are there normal lanemarks, crosswalk lanemarks, bus lane lanemarks or no lanemarks in the scene? return only the text for the most fitting tag, nothing else. ; lanemarks", 
+               "how many driving lanes are in the image? return only the text for the most fitting number, nothing else. ; number_of_lanes",
+               "is the traffic in the image free-flowing, congested, is there an accident or a construction zone? return only the text for the most fitting tag, nothing else. ; traffic_scene",
+               "is a road instersection in the image? return only yes or no, nothing else. ; road_intersection",
+               "is the ego-vehicle in the scene moving forward, stopping, turning, lane changing or parking? return only the text for the most fitting tag, nothing else. ; vehicle_maneuver"
+            ]
+cryptacular==1.6.2
+            
+    # llava 1.5
+    # prompts = [#"does the brightness of the scene overpower the roads visibility? return only yes or no. ; vision_impairing_brightness",
+    #            "is the weather in the scene rainy, snowy, clear, overcast, partly cloudy, foggy, undefined? return only the most fitting tag. ; weather",
+    #            "is the weather in the scene rainy, snowy, clear, overcast, partly cloudy, foggy, undefined? return only the text for the most fitting tag, nothing else. ; weather",
+    #            "is the time of the day twilight, daytime, nighttime, undefined? return only most fitting tag; time_of_day",
+    #            "is the surrounding in the scene an urban area, a rural area, a suburban area, an industrial area or nature? return only most fitting category. ; land_use",
+    #         "is the urban environment a tunnel, a residential area, a parking lot, a city street, a gas station, a highway or undefined? return only most fitting tag. ; urban_environment",
+    #         "are persons or riders in the scene? return only yes or no. ; person",
+    #         "is a traffic sign visible? return only yes or no. ; traffic_sign_for_ego-vehicle",
+    #         "is a traffic light visible? return only yes or no. ; traffic_light_for_ego-vehicle",
+    #         "are there none, few, several or many persons or riders visible? return most fitting category only. ; number_of_vulnerable_road_users",
+    #         "is the road condition dry, wet, snowy, icy or muddy? return only most fitting tag. ; road_condition", 
+    #            "is there one-directional or bi-directional traffic? return only most fitting tag. ; street_configuration",
+    #            "are there normal lanemarks, crosswalk lanemarks, bus lane lanemarks or no lanemarks? return only most fitting tag. ; lanemarks", 
+    #            "how many driving lanes are in the scene? return only the most fitting number. ; number_of_lanes",
+    #            "is the traffic in the scene free-flowing, congested, is there an accident or a construction zone? return most only the most fitting tag. ; traffic_scene",
+    #            "is a road instersection in the scene? return only yes or no. ; road_intersection",
+    #            "is the ego-vehicle vehicle moving forward, stopping, turning, lane changing or parking? return only the most fitting tag. ; vehicle_maneuver"
+    #         ]
+    prompts=[#"does the brightness of the scene overpower the roads visibility? return only yes or no. ; vision_impairing_brightness",
+    #            "is the weather in the scene rainy, snowy, clear, overcast, partly cloudy, foggy, undefined? return only the most fitting tag. ; weather",
+    #            "is the weather in the scene rainy, snowy, clear, overcast, partly cloudy, foggy, undefined? return only the text for the most fitting tag, nothing else. ; weather",
+    #            "is the time of the day twilight, daytime, nighttime, undefined? return only most fitting tag; time_of_day",
+    #            "is the surrounding in the scene an urban area, a rural area, a suburban area, an industrial area or nature? return only most fitting category. ; land_use",
+    #         "is the urban environment a tunnel, a residential area, a parking lot, a city street, a gas station, a highway or undefined? return only most fitting tag. ; urban_environment",
+    #         "are persons or riders in the scene? return only yes or no. ; person",
+    #         "is a traffic sign visible? return only yes or no. ; traffic_sign_for_ego-vehicle",
+    #         "is a traffic light visible? return only yes or no. ; traffic_light_for_ego-vehicle",
+    #         "are there none, few, several or many persons or riders visible? return most fitting category only. ; number_of_vulnerable_road_users",
+    #         "is the road condition dry, wet, snowy, icy or muddy? return only most fitting tag. ; road_condition", 
+    #            "is there one-directional or bi-directional traffic? return only most fitting tag. ; street_configuration",
+    #            "are there normal lanemarks, crosswalk lanemarks, bus lane lanemarks or no lanemarks? return only most fitting tag. ; lanemarks", 
+    #            "how many driving lanes are in the scene? return only the most fitting number. ; number_of_lanes",
+    #            "is the traffic in the scene free-flowing, congested, is there an accident or a construction zone? return most only the most fitting tag. ; traffic_scene",
+    #            "is a road instersection in the scene? return only yes or no. ; road_intersection",
+    #            "is the ego-vehicle vehicle moving forward, stopping, turning, lane changing or parking? return only the most fitting tag. ; vehicle_maneuver"
+    #         ]
+        "{\
+  'prompt': 'scene too bright',\
+  'classification only': {\
+    'labels': ['yes','no'],\
+    'output_format': 'label only',\
+   }\
+} ; vision_impairing_brightness",#
+"{\
+  'prompt': 'weather in the image',\
+  'task': 'image classification',\
+  'labels': ['rainy','snowy','clear','overcast','partly cloudy','foggy','unknown'],\
+  'output': 'label only, nothing else'\
+} ; weather",
+"{\
+  'prompt': 'time of the day in the image',\
+  'classification only': {\
+    'labels': ['twilight','daytime','nighttime','undefined'],\
+    'output_format': 'label only'\
+  }\
+} ; time_of_day",
+"{\
+  'prompt': 'land use in the image',\
+  'classification only': {\
+    'labels': ['urban area','rural area','suburban area','industrial area','nature'],\
+    'output_format': 'label only'\
+  }\
+} ; land_use",
+"{\
+  'prompt': 'urban_environment in the image',\
+  'classification only': {\
+    'labels': ['tunnel', 'residential area', 'parking lot', 'city street', 'gas station', 'highway', 'undefined'],\
+    'output_format': 'label only'\
+  }\
+} ; urban_environment",
+"{\
+  'prompt': 'pedestrians or riders in the image',\
+  'classification only': {\
+    'labels': ['yes','no'],\
+    'output_format': 'label only'\
+  }\
+} ; person",
+"{\
+  'prompt': 'traffic sign for ego vehicle in the image',\
+  'classification only': {\
+    'labels': ['yes','no'],\
+    'output_format': 'label only'\
+  }\
+} ; traffic_sign_for_ego-vehicle",
+"{\
+  'prompt': 'traffic light for ego vehicle in the image',\
+  'classification only': {\
+    'labels': ['yes','no'],\
+    'output_format': 'label only'\
+  }\
+} ; traffic_light_for_ego-vehicle",
+"{\
+  'prompt': 'number of pedestrians and bicyclsts in the image',\
+  'classification only': {\
+    'labels': ['rainy','snowy','clear','overcast','partly cloudy','foggy','unknown'],\
+    'output_format': 'label only'\
+  }\
+} ; number_of_vulnerable_road_users",
+"{\
+  'prompt': 'road condition in the image',\
+  'classification only': {\
+    'labels': ['dry road','wet road','snowy road','icy road','muddy road'],\
+    'output_format': 'label only'\
+  }\
+} ; road_condition",
+"{\
+  'prompt': 'street configuration in the image',\
+  'classification only': {\
+    'labels': ['one way street','two way street'],\
+    'output_format': 'label only'\
+  }\
+} ; street_configuration",
+"{\
+  'prompt': 'lanemarks in the image',\
+  'classification only': {\
+    'labels': ['normal lanemarks','crosswalk','bus lane','no lanemarks'],\
+    'output_format': 'label only'\
+  }\
+} ; lanemarks",
+"{\
+  'prompt': 'number of lanes in the image',\
+  'classification only': {\
+    'labels': ['0','1','2','3','4','5','6'],\
+    'output_format': 'label only'\
+  }\
+} ; number_of_lanes",
+"{\
+  'prompt': 'traffic scenario in the image',\
+  'classification only': {\
+    'labels': ['free-flowing traffic','congested traffic','traffic accident','construction zone'],\
+    'output_format': 'label only'\
+  }\
+} ; traffic_scene",
+"{\
+  'prompt': 'road intersection in the image',\
+  'classification only': {\
+    'labels': ['yes','no'],\
+    'output_format': 'label only'\
+  }\
+} ; road_intersection",
+"{\
+  'prompt': 'ego vehicle maneuver in the image',\
+  'classification only': {\
+    'labels': ['moving forward','stopping','turning','lane changing','parking'],\
+    'output_format': 'label only'\
+  }\
+} ; vehicle_maneuver"
+]# or ' probabilities'
+    # prompts = [
+    #           "does the brightness overpower the roads visibility? return only yes or no. ; vision_impairing_brightness",
+    #            "is the weather rainy, snowy, clear, overcast, partly cloudy, foggy, undefined? return only most fitting tag. ; weather",
+    #            "return only most fitting tag whether it is twilight, daytime, nighttime, undefined. ; time_of_day",
+    #            "is the surrounding an urban area, a rural area, a suburban area, an industrial area or nature? return only most fitting tag. ; land_use",
+    #          "is the urban environment in the scene a tunnel, a residential area, a parking lot, a city street, a gas station, a highway or undefined? return only most fitting tag. ; urban_environment",
+    #          "is the urban environment in the image a tunnel, a residential area, a parking lot, a city street, a gas station, a highway or undefined? return only most fitting tag. ; urban_environment",
+    #          "is the urban environment a tunnel, a residential area, a parking lot, a city street, a gas station, a highway or undefined? return only most fitting tag. ; urban_environment",
+    #         "are persons or riders visible? return only yes or no. ; person",
+    #         "is a traffic sign visible? return only yes or no. ; traffic_sign_for_ego-vehicle",
+    #         "is a traffic light visible? return only yes or no. ; traffic_light_for_ego-vehicle",
+    #         "are there none, few, several or many persons or riders visible? return most fitting tag only. ; number_of_vulnerable_road_users",
+    #         "is the street condition dry, wet, snowy, icy or muddy? return only most fitting tag. ; road_condition", 
+    #            "is there one-directional or two-directional traffic? return most fitting tag only. ; street_configuration",
+    #            "is there a one-directional or a two-directional street? return most fitting tag only. ; street_configuration",
+    #            "is there a one-directional or a two-directional road? return most fitting tag only. ; street_configuration",
+    #            "is there a one-directional or a two-directional street in the scene? return most fitting tag only. ; street_configuration",
+    #            "is there a one-directional or a two-directional road in the scene? return most fitting tag only. ; street_configuration",
+    #            "is there one-directional or bi-directional traffic? return most fitting tag only. ; street_configuration",
+    #            "is there a one-directional or a bi-directional street? return most fitting tag only. ; street_configuration",
+    #            "is there a one-directional or a bi-directional road? return most fitting tag only. ; street_configuration",
+    #            "is there a one-directional or a bi-directional street in the scene? return most fitting tag only. ; street_configuration",
+    #            "is there a one-directional or a bi-directional road in the scene? return most fitting tag only. ; street_configuration",
+    #            "are there normal lanemarks, crosswalk lanemarks, bus lane lanemarks or no lanemarks? return only most fitting tag. ; lanemarks", 
+    #            "how many driving lanes are visible? return only the most fitting number. ; number_of_lanes",
+    #            "is it free-flowing traffic, congested traffic, is there a traffic accident or a construction zone? return most fitting tag only. ; traffic_scene",
+    #            "is a road intersection visible? return only yes or no. ; road_intersection",
+    #           "is the vehicle moving forward, stopping, turning, lane changing or parking? return most fitting tag only. ; vehicle_maneuver",
+    #           "is the ego-vehicle vehicle moving forward, stopping, turning, lane changing or parking? return most fitting tag only. ; vehicle_maneuver",
+    #           "is the vehicles moving forward, stopping, turning, lane changing or parking? return most fitting tag only. ; vehicle_maneuver",
+    #     "one-directional or bi-directional traffic? return most fitting tag only. ; street_configuration",
+    #     "one-directional or bi-directional traffic? return most fitting tag only ; street_configuration",
+    #     "one-directional or bi-directional traffic? return most fitting category only. ; street_configuration",
+    #     "one-way street or two-way street? return most fitting category only. ; street_configuration",
+    #     "one-way street or two-way street? return only category. ; street_configuration",
+    #     "one-way street or two-way street? return only tag. ; street_configuration",
+    #     "one-way street or two-way street? return only name. ; street_configuration",
+    # ]
+    
+
+#     prompts = 'given the following categories, which tag is the most fitting out of the provided ones for each category? Return only the most fitting tag name. Do not repeat the question. \
+# ["does the brightness of the scene overpower the roads visibility? return only yes or no","is the weather in the scene rainy, snowy, clear, overcast, partly cloudy, foggy, undefined? \
+# return only most fitting tag.","return only most fitting tag whether scene is twilight, daytime, nighttime, undefined.","is the land use in the scene urban, rural, suburban, industrial or nature? \
+# return most fitting tag only.", "is the urban environment a tunnel, a residential area, a parking lot, a city street, a gas station, a highway or undefined? \
+# return only most fitting tag.","are persons or riders in the scene? return only yes or no.","is a traffic sign in the scene? return only yes or no.",\
+# "is a traffic light in the scene? return only yes or no.","are there none, few, several or many persons or riders in the scene? return most fitting tag only.","is the road condition dry, wet, snowy, icy or muddy? return most fitting tag only.", \
+# "is the street configuration a one-way street or a two-way street? return most fitting tag only.", \
+# "are the lanemarks normal, crosswalk, bus lane or none? return only most fitting tag.", \
+# "how many driving lanes are in the scene? return only the most fitting number.", \
+# "is the traffic in the scene free-flowing, congested, is there an accident or a construction zone? return most fitting tag only.", \
+# "is a road intersection in the scene? return only yes or no.",\
+# "is the ego-vehicle moving forward, stopping, turning, lane changing or parking? return most fitting tag only."]'

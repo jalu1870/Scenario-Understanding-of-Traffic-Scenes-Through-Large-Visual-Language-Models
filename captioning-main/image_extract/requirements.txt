@@ -1,0 +1,4 @@
+pip install git+ssh://git@gitlab.lrz.de/av2.0/data/dev-kit.git
+pip install ruamel.yaml
+pip install rosbags=0.9.21
+pip install pillow
