@@ -24,7 +24,7 @@ import sys
 import numpy as np
 access_key = "---------"
 secret_key = "---------"
-endpoint_url = "https://s3.edgar.cps.cit.tum.de"
+endpoint_url = "---------"
  
 kwargs = {
     "key": access_key,

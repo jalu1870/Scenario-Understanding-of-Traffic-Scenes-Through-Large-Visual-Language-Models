@@ -17,7 +17,7 @@ import numpy as np
 import sys
 
 
-EDGAR_API_URL = "https://api.edgar.cps.cit.tum.de"
+EDGAR_API_URL = "----"
 
 authenticator = EdgarAuthenticator(
         endpoint_url=EDGAR_API_URL, token_saver=KeyringTokenSaver(EDGAR_API_URL)

@@ -1,8 +1,10 @@
 # Scenario-Understanding-of-Traffic-Scenes-Through-Large-Visual-Language-Models
 
-Evaluation code for the corresponding [paper](https://arxiv.org/abs/2501.17131) 🔬
+Evaluation code for the corresponding [paper](https://openaccess.thecvf.com/content/WACV2025W/LLVMAD/papers/Rivera_Scenario_Understanding_of_Traffic_Scenes_Through_Large_Visual_Language_Models_WACVW_2025_paper.pdf) 🔬
 
-## image_extract.py
+## image_extract
+
+extract images from mcap files from an s3fs server using depricated_image_extract.py or the EDGAR data sdk via image_extract_sdk.py
 
 ### install
 
@@ -10,18 +12,7 @@ Evaluation code for the corresponding [paper](https://arxiv.org/abs/2501.17131) 
 pip install -r requirements.txt
 ```
 
-extracts images from mcap file located on the minio server.
 todo: make the filepaths easier adaptable for other users.
-
-## anonymizer
-
-anonymization of license plates and persons 
-for installation see the corresponding readme file
-
-```
-python dashcamcleaner/cli.py --input_path <path_to_input_image_directory> --output_path <path_to_output_image_directory>
-```
-
 
 ## base
 predict the tags for images.
@@ -45,3 +36,18 @@ arguments:
     --label_path: the path of the saved ground truth labels, only required for evaluation
     --prediction_path: the path + name of the prediction to evaluate (without fileending), only required for evaluation
 ```
+
+## 📖 How to Cite
+
+If you use this code or data in your research, please cite it using the following BibTeX entry:
+
+```bibtex
+@misc{rivera2025scenariounderstandingtrafficscenes,
+      title={Scenario Understanding of Traffic Scenes Through Large Visual Language Models}, 
+      author={Esteban Rivera and Jannik Lübberstedt and Nico Uhlemann and Markus Lienkamp},
+      year={2025},
+      eprint={2501.17131},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2501.17131}, 
+}
